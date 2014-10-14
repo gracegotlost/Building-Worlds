@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/collide2.cs">
+    <Files>
+      <File FileName="Assets/Script/collide2.cs" Line="9" Column="39" />
+      <File FileName="Assets/Script/stair/ball.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/C1.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/C2.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/rotate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ball00.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/temp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/lever.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/G.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn01.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn02.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn03.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn04.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn05.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn06.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/turn07.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/hit.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/stair/fall.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/collide2.cs" Line="23" Column="1" />
+      <File FileName="Assets/Script/camera.cs" Line="25" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
