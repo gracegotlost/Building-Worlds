@@ -3,11 +3,11 @@ using System.Collections;
 
 public class trainMove : MonoBehaviour {
 
-	float speedArrive = 10f;
-	float speedDepart = 1f;
+	float speedArrive = 0.5f;
+	float speedDepart = 0.1f;
 
-	float accArrive = -1f;
-	float accDepart = 0.1f;
+	float accArrive = -0.005f;
+	float accDepart = 0.005f;
 
 	bool isArriving = false;
 	bool isWaiting = false;
@@ -16,19 +16,25 @@ public class trainMove : MonoBehaviour {
 	float nextArriveTime;
 	float waitingTime;
 
+	GameObject train;
+
 	// Use this for initialization
 	void Start () {
-		nextArriveTime = Time.time + 5f;
-		StartCoroutine ( Move() );
+		nextArriveTime = Time.time + 18f;
+		train = GameObject.Find ("/Train");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Time.time > nextArriveTime 
 		    && (!isArriving && !isWaiting && !isDeparting)) {
 			isArriving = true;
-			Debug.Log("isEmpty");
+			speedArrive = 0.5f;
+			speedDepart = 0.1f;
+			StartCoroutine (Move());
 		}
+
 	}
 
 	IEnumerator Move () {
@@ -36,10 +42,10 @@ public class trainMove : MonoBehaviour {
 			if (isArriving) {
 
 				// ADD TRAIN ARRIVING CODE HERE
-				if (transform.position.x < 5f) {
-					transform.position += new Vector3 (speedArrive, 0, 0);
+				if (train.transform.position.x < 5f) {
+					train.transform.position += new Vector3 (speedArrive, 0, 0);
 				} else {
-					transform.position = new Vector3 (-10f, transform.position.y, transform.position.z);
+					train.transform.position = new Vector3 (0f, train.transform.position.y, train.transform.position.z);
 				}
 				speedArrive += accArrive;
 
@@ -47,11 +53,11 @@ public class trainMove : MonoBehaviour {
 				if (speedArrive <= 0f) {
 					isArriving = false;
 					isWaiting = true;
-					waitingTime = Time.time + Random.Range(10f, 15f);
-					Debug.Log("isArriving");
+					waitingTime = Time.time + Random.Range(30f, 32f);
 				}
 
-				yield return new WaitForSeconds(0.2f);
+				Debug.Log("isArriving");
+				yield return new WaitForSeconds(0.1f);
 			}
 			
 			if (isWaiting) {
@@ -63,32 +69,40 @@ public class trainMove : MonoBehaviour {
 				if (Time.time > waitingTime) {
 					isWaiting = false;
 					isDeparting = true;
-					Debug.Log("isWaiting");
 				}
 
-				yield return new WaitForSeconds(0.2f);
+				Debug.Log("isWaiting");
+				yield return new WaitForSeconds(0.1f);
 			}
 			
 			if (isDeparting) {
 
 				// ADD TRAIN DEPARTING CODE HERE
-				if (speedDepart <= 4f) {
-					if (transform.position.x < 5f) {
-						transform.position += new Vector3 (speedDepart, 0, 0);
+				if (speedDepart <= 0.8f) {
+					if (train.transform.position.x < 5f) {
+						train.transform.position += new Vector3 (speedDepart, 0, 0);
 					} else {
-						transform.position = new Vector3 (-10f, transform.position.y, transform.position.z);
+						train.transform.position = new Vector3 (0f, train.transform.position.y, train.transform.position.z);
 					}
-					speedDepart += accDepart;
 				}
+
+				if (speedDepart > 0.8f && speedDepart < 1.0f) {
+					train.transform.position += new Vector3 (speedDepart, 0, 0);
+				}
+
+				speedDepart += accDepart;
 
 				// IF TRAIN HAS LEFT
-				if (speedDepart >= 5f) {
+				if (speedDepart >= 1.0f) {
 					isDeparting = false;
-					Debug.Log("isDeparting");
+					train.transform.position = new Vector3 (-10f, train.transform.position.y, train.transform.position.z);
 					nextArriveTime = Time.time + Random.Range(10f, 15f);
+					Debug.Log("Has Left");
+					yield break;
 				}
 
-				yield return new WaitForSeconds(0.2f);
+				Debug.Log("isDeparting");
+				yield return new WaitForSeconds(0.1f);
 			}
 		}
 	}
