@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/train1/trainMove2.cs">
+    <Files>
+      <File FileName="Assets/scripts/walking/walkingBlack.cs" Line="30" Column="5" />
+      <File FileName="Assets/scripts/train2/trainMoveTracks.cs" Line="63" Column="49" />
+      <File FileName="Assets/scripts/keyControl.cs" Line="16" Column="3" />
+      <File FileName="Assets/scripts/train1/trainMove.cs" Line="152" Column="8" />
+      <File FileName="Assets/scripts/train1/trainMove2.cs" Line="152" Column="1" />
+      <File FileName="Assets/scripts/walking/walkingWhite.cs" Line="7" Column="23" />
+      <File FileName="Assets/scripts/walking/walkingYellow.cs" Line="16" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
