@@ -1,4 +1,3 @@
-Building-Worlds
-===============
+#Building-Worlds
 
-This is a collection of my assignments for this class
+This is a crazy fun class run by Robert Yang.
